@@ -1,0 +1,128 @@
+/* Fundo padrão (será dinâmico pelo JS) */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 1s ease-in-out;
+}
+
+/* Título principal */
+h1 {
+  color: white;
+  margin: 40px 0 20px;
+  font-size: 2.5em;
+}
+
+/* Container que organiza os cards */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Estilo individual dos cards */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+/* Efeito hover */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Estilos para dia e noite */
+.card-dia {
+  background: rgba(255, 255, 255, 0.8);
+  color: #222;
+}
+
+.card-noite {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Bandeira */
+.bandeira {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Ícone de dia/noite */
+.icone {
+  font-size: 2em;
+  margin: 5px 0;
+  display: block;
+}
+
+/* Nome da cidade */
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.3em;
+}
+
+/* Data */
+.data {
+  display: block;
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* Horário */
+.hora {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Animação Flip */
+.flip {
+  animation: flip 0.5s ease-in-out;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
